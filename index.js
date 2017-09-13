@@ -10,10 +10,19 @@ let optimizelyClient;
 // Initialize Optimizely SDK
 getDatafile(datafileUrl, (datafile) => {
   optimizelyClient = optimizely.createInstance({
-    datafile: JSON.parse(datafile),
+    datafile: datafile,
     skipJSONValidation: true
   });
 });
 
-// Write your code here
-//
+// Write your code here 
+
+/*** EXAMPLE ***
+
+  optimizelyClient.activate('SOME_EXPERIMENT_KEY', userId);
+
+  document.querySelector('body').addEventListener('click', function(){
+    optimizelyClient.track('SOME_EVENT_KEY', 'userId');
+  });
+
+*** END EXAMPLE ***/
