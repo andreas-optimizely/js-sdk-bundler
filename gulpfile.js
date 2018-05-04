@@ -19,7 +19,7 @@ function compile(watch){
       .pipe(source('build.js'))
       .pipe(buffer())
       // Uncomment line below to minify your build
-      //.pipe(uglify())
+      .pipe(uglify())
       .pipe(gulp.dest('./build'))
   }
   
